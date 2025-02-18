@@ -14,6 +14,8 @@
    # ./calibre.nix
    # ./komga.nix
    # ./rustdesk.nix
+      ./komga.nix
     ./update-containers.nix
+    ./readarr.nix
  ];
 }

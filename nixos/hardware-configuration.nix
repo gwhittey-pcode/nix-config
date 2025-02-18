@@ -58,6 +58,6 @@
     prefixLength = 24;
   } ];
   networking.defaultGateway = "192.168.1.254";
-  networking.nameservers = [ "8.8.8.8" ];
+  networking.nameservers = [ "192.168.1.94" "8.8.8.8" ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

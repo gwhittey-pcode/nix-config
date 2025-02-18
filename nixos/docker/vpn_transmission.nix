@@ -92,34 +92,34 @@
       "docker-compose-vpn_transmission-root.target"
     ];
   };
-  virtualisation.oci-containers.containers."vpn_transmission-autoheal" = {
-    image = "willfarrell/autoheal:latest";
-    environment = {
-      "AUTOHEAL_CONTAINER_LABEL" = "autoheal-app";
-    };
-    volumes = [
-      "/etc/localtime:/etc/localtime:ro"
-      "/var/run/docker.sock:/var/run/docker.sock:rw"
-    ];
-    log-driver = "journald";
-    extraOptions = [
-      "--network=none"
-    ];
-  };
-  systemd.services."docker-vpn_transmission-autoheal" = {
-    serviceConfig = {
-      Restart = lib.mkOverride 90 "always";
-      RestartMaxDelaySec = lib.mkOverride 90 "1m";
-      RestartSec = lib.mkOverride 90 "100ms";
-      RestartSteps = lib.mkOverride 90 9;
-    };
-    partOf = [
-      "docker-compose-vpn_transmission-root.target"
-    ];
-    wantedBy = [
-      "docker-compose-vpn_transmission-root.target"
-    ];
-  };
+  # virtualisation.oci-containers.containers."vpn_transmission-autoheal" = {
+  #   image = "willfarrell/autoheal:latest";
+  #   environment = {
+  #     "AUTOHEAL_CONTAINER_LABEL" = "autoheal-app";
+  #   };
+  #   volumes = [
+  #     "/etc/localtime:/etc/localtime:ro"
+  #     "/var/run/docker.sock:/var/run/docker.sock:rw"
+  #   ];
+  #   log-driver = "journald";
+  #   extraOptions = [
+  #     "--network=none"
+  #   ];
+  # };
+  # systemd.services."docker-vpn_transmission-autoheal" = {
+  #   serviceConfig = {
+  #     Restart = lib.mkOverride 90 "always";
+  #     RestartMaxDelaySec = lib.mkOverride 90 "1m";
+  #     RestartSec = lib.mkOverride 90 "100ms";
+  #     RestartSteps = lib.mkOverride 90 9;
+  #   };
+  #   partOf = [
+  #     "docker-compose-vpn_transmission-root.target"
+  #   ];
+  #   wantedBy = [
+  #     "docker-compose-vpn_transmission-root.target"
+  #   ];
+  # };
 
   # Networks
   systemd.services."docker-network-vpn_transmission_default" = {

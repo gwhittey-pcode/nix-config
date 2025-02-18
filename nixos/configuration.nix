@@ -70,6 +70,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
    # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "gwhittey";
@@ -143,6 +144,16 @@
       shell = pkgs.zsh;
     };
   };
+   programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+
+    # Add any missing dynamic libraries for unpackaged programs
+
+    # here, NOT in environment.systemPackages
+
+  ];
+
   environment.systemPackages = with pkgs; [
     quickemu
 	  git
@@ -158,6 +169,12 @@
     compose2nix
     htop
     gh
+    kdePackages.partitionmanager
+    persepolis
+    neofetch
+    kdePackages.kalk
+    virt-viewer
+    unar
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.
