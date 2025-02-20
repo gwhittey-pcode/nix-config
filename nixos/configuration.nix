@@ -20,7 +20,7 @@
     ./hardware-configuration.nix
     #flatpak handaling
     ./flatpak/flatpak.nix
-    #./docker/docker.nix
+    ./docker/docker.nix
   ];
 
   nixpkgs = {
@@ -175,6 +175,7 @@
     kdePackages.kalk
     virt-viewer
     unar
+    urserver
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -204,6 +205,5 @@
 ];
   #Need hardware.enableRedistributableFirmware = lib.mkDefault true; for nixos guest to use GPU
   hardware.enableRedistributableFirmware = lib.mkDefault true;
-  services.qemuGuest.enable = true; 
 
 }
