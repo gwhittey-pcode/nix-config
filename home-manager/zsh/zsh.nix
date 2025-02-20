@@ -43,6 +43,9 @@
             src = ./p10k-config;
             file = "p10k.zsh";
             }
+            "git"
+            "git-prompt"
+            "docker"
         ];
         };
 }
