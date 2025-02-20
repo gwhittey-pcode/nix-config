@@ -11,11 +11,11 @@
     ./media_stack.nix
     ./vpn_transmission.nix
     ./portainer.nix
-   # ./calibre.nix
-   # ./komga.nix
+    ./calibre.nix
    # ./rustdesk.nix
-      ./komga.nix
-    ./update-containers.nix
+     ./komga.nix
     ./readarr.nix
+    ./update-containers.nix
+    
  ];
 }

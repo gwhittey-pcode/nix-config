@@ -20,7 +20,7 @@
     ./hardware-configuration.nix
     #flatpak handaling
     ./flatpak/flatpak.nix
-    ./docker/docker.nix
+    #./docker/docker.nix
   ];
 
   nixpkgs = {

@@ -15,7 +15,7 @@
     volumes = [
       "/HD/HD2/Config/komga/config:/config:rw"
       "/HD/HD2/Share1/Comics:/data:rw"
-      "/HD/HD2/Share1/Comics:/data:rw"
+      "/HD/HD3/Ebooks:/ebooks:rw"
       "/etc/timezone:/etc/timezone:ro"
     ];
     ports = [

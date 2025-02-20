@@ -24,20 +24,20 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/HD/HD1" =
-    { device = "/dev/disk/by-label/HD1";
-      fsType = "ext4";
-    };
+  # fileSystems."/HD/HD1" =
+  #   { device = "/dev/disk/by-label/HD1";
+  #     fsType = "ext4";
+  #   };
 
-  fileSystems."/HD/HD2" =
-    { device = "/dev/disk/by-label/HD2";
-      fsType = "ext4";
-    };
+  # fileSystems."/HD/HD2" =
+  #   { device = "/dev/disk/by-label/HD2";
+  #     fsType = "ext4";
+  #   };
 
-  fileSystems."/HD/HD3" =
-    { device = "/dev/disk/by-label/HD3";
-      fsType = "ext4";
-    };
+  # fileSystems."/HD/HD3" =
+  #   { device = "/dev/disk/by-label/HD3";
+  #     fsType = "ext4";
+  #   };
   fileSystems."/HD/HD4" =
     { device = "/dev/disk/by-label/swap";
       fsType = "ext4";
@@ -54,7 +54,7 @@
   #networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.ens18.useDHCP = lib.mkDefault true;
   networking.interfaces.ens18.ipv4.addresses = [ {
-    address = "192.168.1.3";
+    address = "192.168.1.6";
     prefixLength = 24;
   } ];
   networking.defaultGateway = "192.168.1.254";
