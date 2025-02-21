@@ -9,7 +9,7 @@
   virtualisation.oci-containers.backend = "docker";
  imports = [
     ./jackett.nix
-    ./medisa.nix
+    ./medusa.nix
     ./plex.nix
     ./readarr.nix
     ./prowlarr.nix
@@ -20,5 +20,7 @@
     ./readarr.nix
     ./update-containers.nix
     ./adguardhome.nix
+    ./radarr.nix
+    ./nginx.nix
   ];
 }

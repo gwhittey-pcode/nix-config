@@ -22,7 +22,7 @@
     volumes = [
       "/HD/HD1/Movies:/movies:rw"
       "/HD/HD1/TV:/tv:rw"
-      "/HD/HD2/Config/Plex:/config:rw"
+      "/HD/HD2/Config/Plex2:/config:rw"
     ];
     log-driver = "journald";
     extraOptions = [
