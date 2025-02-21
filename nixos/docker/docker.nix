@@ -19,7 +19,7 @@
     ./komga.nix
     ./readarr.nix
     ./update-containers.nix
-    #./adguardhome.nix
+    ./adguardhome.nix
     ./radarr.nix
     
   ];
