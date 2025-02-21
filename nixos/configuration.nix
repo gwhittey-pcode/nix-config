@@ -195,7 +195,7 @@
   system.stateVersion = "24.11";
   virtualisation.docker.enable = true;
   services.flatpak.enable = true;
-
+  services.urserver.enable = true;
   systemd.tmpfiles.rules = [
   "d /HD/ 0755 gwhittey gwhittey"
   "d /HD/HD1 0755 gwhittey gwhittey"
@@ -205,5 +205,6 @@
 ];
   #Need hardware.enableRedistributableFirmware = lib.mkDefault true; for nixos guest to use GPU
   hardware.enableRedistributableFirmware = lib.mkDefault true;
+
 
 }

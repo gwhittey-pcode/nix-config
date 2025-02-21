@@ -131,60 +131,29 @@
     ];
   };
   virtualisation.oci-containers.containers."plex" = {
-    image = "plexinc/pms-docker:public";
+    image = "lscr.io/linuxserver/plex:latest";
     environment = {
-      "PGID" = "1001";
-      "PLEX_CLAIM" = "";
+      "PGID" = "1000";
+      "PLEX_CLAIM" = " claim-MBPbV1LiwzFdsm5nskkR";
       "PUID" = "1000";
-      "UMASK_SET" = "022";
-      "VERSION" = "latest";
+      "TZ" = "Etc/UTC";
+      "VERSION" = "docker";
     };
     volumes = [
       "/HD/HD1/Movies:/movies:rw"
       "/HD/HD1/TV:/tv:rw"
       "/HD/HD2/Config/Plex2:/config:rw"
     ];
-    ports = [
-      "32400:32400/tcp"
-      "3005:3005/tcp"
-      "8324:8324/tcp"
-      "32469:32469/tcp"
-      "1911:1900/udp"
-      "32410:32410/udp"
-      "32412:32412/udp"
-      "32413:32413/udp"
-      "32414:32414/udp"
-    ];
     log-driver = "journald";
     extraOptions = [
-      "--network-alias=plex"
-      "--network=media_stack_default"
+      "--network=host"
     ];
   };
-  systemd.services."docker-plex" = {
-    serviceConfig = {
-      Restart = lib.mkOverride 90 "always";
-      RestartMaxDelaySec = lib.mkOverride 90 "1m";
-      RestartSec = lib.mkOverride 90 "100ms";
-      RestartSteps = lib.mkOverride 90 9;
-    };
-    after = [
-      "docker-network-media_stack_default.service"
-    ];
-    requires = [
-      "docker-network-media_stack_default.service"
-    ];
-    partOf = [
-      "docker-compose-media_stack-root.target"
-    ];
-    wantedBy = [
-      "docker-compose-media_stack-root.target"
-    ];
-  };
+  
   virtualisation.oci-containers.containers."prowlarr" = {
     image = "lscr.io/linuxserver/prowlarr:latest";
     environment = {
-      "PGID" = "1001";
+      "PGID" = "1000";
       "PUID" = "1000";
       "TZ" = "Etc/UTC";
     };
