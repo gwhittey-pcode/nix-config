@@ -21,6 +21,7 @@
     #flatpak handaling
     ./flatpak/flatpak.nix
     ./docker/docker.nix
+    ./packages/adguard.nix
   ];
 
   nixpkgs = {
