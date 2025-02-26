@@ -177,6 +177,7 @@
     virt-viewer
     unar
     urserver
+    heroic
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.

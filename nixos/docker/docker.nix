@@ -21,6 +21,7 @@
     ./update-containers.nix
     ./adguardhome.nix
     ./radarr.nix
+    ./jellyseerr.nix
     
   ];
 }
