@@ -28,7 +28,7 @@
         "force user" = "username";
         "force group" = "groupname";
         };
-        "private" = {
+        "HD" = {
         "path" = "/HD/";
         "browseable" = "yes";
         "read only" = "no";

@@ -21,7 +21,7 @@
     #flatpak handaling
     ./flatpak/flatpak.nix
     ./docker/docker.nix
-  #../packages/adguard.nix
+  ../packages/samba.nix
   ];
 
   nixpkgs = {
@@ -178,6 +178,7 @@
     unar
     urserver
     heroic
+    cifs-utils 
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -198,6 +199,7 @@
   virtualisation.docker.enable = true;
   services.flatpak.enable = true;
   services.urserver.enable = true;
+  services.gvfs.enable = true;
   systemd.tmpfiles.rules = [
   "d /HD/ 0755 gwhittey gwhittey"
   "d /HD/HD1 0755 gwhittey gwhittey"
