@@ -16,12 +16,14 @@
     ./contriners/vpn_transmission.nix
     ./contriners/portainer.nix
     ./contriners/calibre.nix
-    ./contriners/komga.nix
-    ./contriners/readarr.nix
-    ./contriners/update-containers.nix
+    ./contriners/komga.nix    
     ./contriners/adguardhome.nix
     ./contriners/radarr.nix
-    ./contriners/jellyseerr.nix
+    ./containers/watchtower.nix
+    ./contriners/update-containers.nix
+
+    #./contriners/readarr.nix
+    #./contriners/jellyseerr.nix
     #./contriners/sonarr.nix
     
   ];
