@@ -22,7 +22,7 @@
     ./adguardhome.nix
     ./radarr.nix
     ./jellyseerr.nix
-    ./sonarr.nix
+    #./sonarr.nix
     
   ];
 }

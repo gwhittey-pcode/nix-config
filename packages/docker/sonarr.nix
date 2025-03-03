@@ -20,7 +20,7 @@
     volumes = [
       "/HD/HD1/TV:/tv:rw"
       "/HD/HD2/Config/sonarr/data:/config:rw"
-      "/HD/HD2/Torrent:/downloads:rw"
+      "/HD/HD2/Torrent:/data:rw"
     ];
     ports = [
       "8989:8989/tcp"

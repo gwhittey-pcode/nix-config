@@ -20,8 +20,8 @@
     ./hardware-configuration.nix
     #flatpak handaling
     ./flatpak/flatpak.nix
-    ./docker/docker.nix
-  ../packages/samba.nix
+    ../packages/docker/docker.nix
+    ../packages/samba.nix
   ];
 
   nixpkgs = {
