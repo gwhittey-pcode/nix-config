@@ -46,6 +46,7 @@
 
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    cockpit-apps = pkgs.callPackage packages/cockpit/default.nix { inherit pkgs; };
   in {
     settings = {
       # Enable flakes and new 'nix' command
@@ -179,6 +180,12 @@
     urserver
     heroic
     cifs-utils 
+    lazydocker
+    cockpit
+    # cockpit-apps.podman-containers
+    cockpit-apps.virtual-machines
+    libvirt # Needed for virtual-machines
+    virt-manager # Needed for virtual-machines
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -207,6 +214,9 @@
   "d /HD/HD3 0755 gwhittey gwhittey"
 
 ];
+
+  virtualisation.virtualbox.host.enable = true;   
+  users.extraGroups.vboxusers.members = [ "gwhittey" ];
   #Need hardware.enableRedistributableFirmware = lib.mkDefault true; for nixos guest to use GPU
   hardware.enableRedistributableFirmware = lib.mkDefault true;
 
