@@ -6,7 +6,13 @@
   config,
   pkgs,
   ...
-}: {
+}: 
+  
+  let
+    cockpit-apps = pkgs.callPackage packages/cockpit/default.nix { inherit pkgs; };
+  in
+  {
+  
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules from other flakes (such as nixos-hardware):
@@ -20,8 +26,8 @@
     ./hardware-configuration.nix
     #flatpak handaling
     ./flatpak/flatpak.nix
-    ../packages/docker.nix
-    ../packages/samba.nix
+    ./packages/docker.nix
+    ./packages/samba.nix
   ];
 
   nixpkgs = {
@@ -46,7 +52,7 @@
 
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-    cockpit-apps = pkgs.callPackage packages/cockpit/default.nix { inherit pkgs; };
+    
   in {
     settings = {
       # Enable flakes and new 'nix' command
