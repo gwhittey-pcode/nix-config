@@ -22,6 +22,7 @@
     ./containers/watchtower.nix
     ./containers/update-containers.nix
      ./containers/flaresolverr.nix
+     
     #./containers/readarr.nix
     #./containers/jellyseerr.nix
     #./containers/sonarr.nix
