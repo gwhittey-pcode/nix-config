@@ -223,6 +223,18 @@
 
   virtualisation.virtualbox.host.enable = true;   
   users.extraGroups.vboxusers.members = [ "gwhittey" ];
+  services.cockpit = {
+  enable = true;
+  port = 9090;
+  # openFirewall = true; # Please see the comments section
+  settings = {
+    WebService = {
+      AllowUnencrypted = true;
+    };
+  };
+};
+  
+  
   #Need hardware.enableRedistributableFirmware = lib.mkDefault true; for nixos guest to use GPU
   hardware.enableRedistributableFirmware = lib.mkDefault true;
 
