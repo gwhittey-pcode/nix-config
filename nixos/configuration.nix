@@ -192,6 +192,9 @@
     cockpit-apps.virtual-machines
     libvirt # Needed for virtual-machines
     virt-manager # Needed for virtual-machines
+    powershell
+    szyszka
+    uget
     
   ];
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -218,6 +221,8 @@
   "d /HD/HD1 0755 gwhittey gwhittey"
   "d /HD/HD2 0755 gwhittey gwhittey"
   "d /HD/HD3 0755 gwhittey gwhittey"
+  "d /HD/HD4 0755 gwhittey gwhittey"
+
 
 ];
 
