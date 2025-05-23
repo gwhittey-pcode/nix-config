@@ -7,7 +7,8 @@ let
   # 1. Declare the Flatpaks you *want* on your system
   desiredFlatpaks = [
    "tv.plex.PlexHTPC"
-   #"org.jdownloader.JDownloader"
+   "org.equeim.Tremotesf"
+   "org.jdownloader.JDownloader"
   ];
 in
 {

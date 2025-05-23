@@ -194,9 +194,14 @@
     virt-manager # Needed for virtual-machines
     powershell
     szyszka
-    uget
+    unar
+    peazip
     
   ];
+  nixpkgs.config.permittedInsecurePackages = [
+                "archiver-3.5.1"
+              ];
+
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
